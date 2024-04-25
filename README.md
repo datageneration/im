@@ -1,1 +1,1 @@
-# im
+# Information Management repository
