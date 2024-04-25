@@ -1,0 +1,71 @@
+---
+title: "Introduction to DuckDB in R"
+format: 
+  revealjs:
+    transition: 'slide'
+---
+
+## Introduction to DuckDB
+
+### What is DuckDB?
+
+DuckDB is an embeddable SQL OLAP database management system. It's designed primarily for analytical workloads and is aimed at simplifying data management within applications.
+
+------------------------------------------------------------------------
+
+## History of DuckDB
+
+### Origin and Development
+
+DuckDB was created by Hannes Mühleisen, Mark Raasveldt, and a team of researchers at CWI Amsterdam. It began as a research project focused on improving data management and query execution within analytical applications.
+
+------------------------------------------------------------------------
+
+## Key Features of DuckDB
+
+### Unique Functionalities
+
+-   **Columnar Storage**: Optimizes analytical processing.
+-   **Vectorized Query Execution**: Enhances execution speed by processing data in batches.
+-   **Seamless R Integration**: Works directly within R environments, interfacing smoothly with `dplyr`.
+
+------------------------------------------------------------------------
+
+## Advantages of Using DuckDB
+
+### Why Choose DuckDB?
+
+-   **In-Process Database**: No need for separate server setup.
+-   **Low Overhead**: Minimal memory and disk requirements.
+-   **High Performance**: Superior in executing complex analytical queries.
+
+------------------------------------------------------------------------
+
+## Comparison with PostgreSQL and MySQL
+
+### How Does DuckDB Stack Up?
+
+-   **Setup Simplicity**: DuckDB requires no dedicated server, unlike PostgreSQL and MySQL.
+-   **Performance**: Optimized for analytics with faster queries on large datasets, while PostgreSQL excels in transaction processing and MySQL in web applications.
+-   **Resource Efficiency**: DuckDB is more resource-efficient in analytical contexts.
+
+------------------------------------------------------------------------
+
+## DuckDB in Online Applications
+
+### New Use Cases
+
+-   **Real-Time Analytics**: Integrated in web applications for on-the-fly data analysis.
+-   **Embedded Analytics**: Used within software products to provide embedded SQL capabilities.
+
+------------------------------------------------------------------------
+
+## Future Directions of DuckDB
+
+### Roadmap and Innovations
+
+-   **Enhanced ML Integration**: Plans to integrate more directly with machine learning libraries.
+-   **Scalability Improvements**: Focus on scaling DuckDB to handle even larger datasets efficiently.
+-   **Cloud Optimizations**: Enhancements for better performance in cloud environments.
+
+------------------------------------------------------------------------
