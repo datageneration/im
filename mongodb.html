@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="duckdb_files/libs/clipboard/clipboard.min.js"></script>
-<script src="duckdb_files/libs/quarto-html/tabby.min.js"></script>
-<script src="duckdb_files/libs/quarto-html/popper.min.js"></script>
-<script src="duckdb_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="duckdb_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="duckdb_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="duckdb_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="duckdb_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="mongodb_files/libs/clipboard/clipboard.min.js"></script>
+<script src="mongodb_files/libs/quarto-html/tabby.min.js"></script>
+<script src="mongodb_files/libs/quarto-html/popper.min.js"></script>
+<script src="mongodb_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="mongodb_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="mongodb_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="mongodb_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="mongodb_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.545">
 
-  <title>Introduction to DuckDB</title>
+  <title>Introduction to MongoDB</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="duckdb_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="duckdb_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="mongodb_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="mongodb_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,12 +29,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="duckdb_files/libs/revealjs/dist/theme/quarto.css">
-  <link rel="stylesheet" href="styles.css">
-  <link href="duckdb_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="duckdb_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="duckdb_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="duckdb_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="mongodb_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="mongodb_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="mongodb_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="mongodb_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="mongodb_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -326,16 +325,20 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction to DuckDB</h1>
+  <h1 class="title">Introduction to MongoDB</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="introduction-to-duckdb" class="slide level2">
-<h2>Introduction to <a href="https://duckdb.org">DuckDB</a></h2>
-<h3 id="what-is-duckdb">What is DuckDB?</h3>
-<p>DuckDB is an embeddable SQL OLAP database management system. It’s designed primarily for analytical workloads and is aimed at simplifying data management within applications.</p>
+<section id="mongodb-an-overview" class="slide level2">
+<h2>MongoDB: An Overview</h2>
+<h3 id="history-of-mongodb">History of MongoDB</h3>
+<ul>
+<li class="fragment"><strong>Origin</strong>: Developed by Dwight Merriman, Eliot Horowitz, and Kevin Ryan.</li>
+<li class="fragment"><strong>Initial Release</strong>: 2009 by MongoDB Inc.&nbsp;(formerly 10gen).</li>
+<li class="fragment"><strong>Purpose</strong>: Designed to address limitations of traditional relational databases regarding scalability and flexibility.</li>
+</ul>
 <link href="https://fonts.googleapis.com/css?family=Tinos:400,400i,700&amp;display=swap" rel="stylesheet">
 <style>
   body {
@@ -351,93 +354,81 @@
 </section>
 <section class="slide level2">
 
-<h3 id="what-is-olap">What is OLAP?</h3>
+<h3 id="inventors">Inventors</h3>
 <ul>
-<li class="fragment"><strong>Online Analytical Processing</strong></li>
-<li class="fragment"><strong>A category of software tools designed for data analysis</strong></li>
-<li class="fragment"><strong>Provides multidimensional analysis of data</strong></li>
+<li class="fragment"><strong>Dwight Merriman</strong>: Former CTO of DoubleClick (now part of Google).</li>
+<li class="fragment"><strong>Eliot Horowitz</strong>: Background in building scalable websites, former CTO of MongoDB Inc.</li>
+<li class="fragment"><strong>Kevin Ryan</strong>: Entrepreneur involved in multiple startups including Business Insider and Gilt Groupe.</li>
 </ul>
 </section>
-<section id="history-of-duckdb" class="slide level2">
-<h2>History of DuckDB</h2>
-<h3 id="origin-and-development">Origin and Development</h3>
-<p>DuckDB was created by <a href="https://images.app.goo.gl/K62db7tvxyqnR66m8">Hannes Mühleisen</a>, <a href="https://images.app.goo.gl/JnkxrFwRzXKqoC9x8">Mark Raasveldt</a>, and a team of researchers at CWI Amsterdam. It began as a research project focused on improving data management and query execution within analytical applications.</p>
-<style>
-  .fragment[data-fragment-index="1"] {
-    color: #008000; /* Green color */
-  }
-  .fragment[data-fragment-index="2"] {
-    color: #ffa500; /* Orange color */
-  }
-</style>
-</section>
-<section id="key-features-of-duckdb" class="slide level2">
-<h2>Key Features of DuckDB</h2>
-<h3 id="unique-functionalities">Unique Functionalities</h3>
+<section id="functionalities-and-advantages" class="slide level2">
+<h2>Functionalities and Advantages</h2>
+<h3 id="core-functionalities">Core Functionalities</h3>
 <ul>
-<li class="fragment"><strong>Columnar Storage</strong>: Optimizes analytical processing.</li>
-<li class="fragment"><strong>Vectorized Query Execution</strong>: Enhances execution speed by processing data in batches.</li>
-<li class="fragment"><strong>Seamless R Integration</strong>: Works directly within R environments, interfacing smoothly with <code>dplyr</code>.</li>
+<li class="fragment"><strong>Document-Oriented Storage</strong>: JSON-style documents with dynamic schemas.</li>
+<li class="fragment"><strong>Full Index Support</strong>: Index on any attribute, just like SQL databases.</li>
+<li class="fragment"><strong>Replication &amp; High Availability</strong>: Automatic failovers with replica sets.</li>
 </ul>
 </section>
-<section id="advantages-of-using-duckdb" class="slide level2">
-<h2>Advantages of Using DuckDB</h2>
-<h3 id="why-choose-duckdb">Why Choose DuckDB?</h3>
+<section class="slide level2">
+
+<h3 id="advantages-of-using-mongodb">Advantages of Using MongoDB</h3>
 <ul>
-<li class="fragment"><strong>In-Process Database</strong>: No need for separate server setup.</li>
-<li class="fragment"><strong>Low Overhead</strong>: Minimal memory and disk requirements.</li>
-<li class="fragment"><strong>High Performance</strong>: Superior in executing complex analytical queries.</li>
+<li class="fragment"><strong>Scalability</strong>: Horizontal scalability with sharding.</li>
+<li class="fragment"><strong>Flexibility</strong>: No schema migrations needed.</li>
+<li class="fragment"><strong>Developer Friendly</strong>: Rich queries and easy integration with multiple languages.</li>
 </ul>
 </section>
-<section id="comparison-with-postgresql-and-mysql" class="slide level2">
-<h2>Comparison with PostgreSQL and MySQL</h2>
-<h3 id="how-does-duckdb-stack-up">How Does DuckDB Stack Up?</h3>
+<section id="comparison-with-relational-databases" class="slide level2">
+<h2>Comparison with Relational Databases</h2>
+<h3 id="traditional-databases-sql">Traditional Databases (SQL)</h3>
 <ul>
-<li class="fragment"><strong>Setup Simplicity</strong>: DuckDB requires no dedicated server, unlike PostgreSQL and MySQL.</li>
-<li class="fragment"><strong>Performance</strong>: Optimized for analytics with faster queries on large datasets, while PostgreSQL excels in transaction processing and MySQL in web applications.</li>
-<li class="fragment"><strong>Resource Efficiency</strong>: DuckDB is more resource-efficient in analytical contexts.</li>
+<li class="fragment"><strong>Examples</strong>: PostgreSQL, MySQL.</li>
+<li class="fragment"><strong>Schema</strong>: Fixed and rigid, requiring migrations for modifications.</li>
+<li class="fragment"><strong>Transactions</strong>: Strong consistency and ACID compliance.</li>
 </ul>
 </section>
-<section id="duckdb-in-online-applications" class="slide level2">
-<h2>DuckDB in Online Applications</h2>
-<h3 id="new-use-cases">New Use Cases</h3>
+<section class="slide level2">
+
+<h3 id="comparing-mongodb">Comparing MongoDB</h3>
 <ul>
-<li class="fragment"><strong>Real-Time Analytics</strong>: Integrated in web applications for on-the-fly data analysis.</li>
-<li class="fragment"><strong>Embedded Analytics</strong>: Used within software products to provide embedded SQL capabilities.</li>
+<li class="fragment"><strong>Schema Flexibility</strong>: Allows modifications without downtime.</li>
+<li class="fragment"><strong>Scalability</strong>: Designed for horizontal scaling.</li>
+<li class="fragment"><strong>Use Case Fit</strong>: Better suited for big data and real-time applications.</li>
 </ul>
 </section>
-<section id="advantages-of-duckdb" class="slide level2">
-<h2>Advantages of DuckDB</h2>
-<h3 id="over-sqlite-and-postgresql">Over SQLite and PostgreSQL</h3>
+<section id="new-applications" class="slide level2">
+<h2>New Applications</h2>
+<h3 id="modern-online-apps">Modern Online Apps</h3>
 <ul>
-<li class="fragment"><p><strong>Optimized for OLAP</strong>: Unlike SQLite, which is optimized for lightweight transactions and local storage without the need for heavy concurrency, DuckDB is designed specifically for complex analytical queries, making it ideal for OLAP tasks.</p></li>
-<li class="fragment"><p><strong>In-Memory Processing</strong>: DuckDB can operate both on-disk and entirely in-memory. This flexible operation model allows for high-performance scenarios that surpass the capabilities of SQLite when handling large datasets.</p></li>
-<li class="fragment"><p><strong>Columnar Storage</strong>: DuckDB uses columnar storage which enhances query performance for analytics. This is a stark contrast to SQLite’s row-based storage and even offers benefits over PostgreSQL when the primary requirement is analytical processing.</p></li>
+<li class="fragment"><strong>Real-Time</strong>: Real-time analytics and real-time personalization.</li>
+<li class="fragment"><strong>Big Data</strong>: Handling large volumes of unstructured data.</li>
+<li class="fragment"><strong>IoT and Mobile Apps</strong>: Storing data from millions of devices and mobile app backends.</li>
 </ul>
 </section>
-<section id="advantages-of-duckdb-continued" class="slide level2">
-<h2>Advantages of DuckDB (continued)</h2>
-<h3 id="over-sqlite-and-postgresql-1">Over SQLite and PostgreSQL</h3>
+<section class="slide level2">
+
+<h3 id="example-applications">Example Applications</h3>
 <ul>
-<li class="fragment"><p><strong>Vectorized Query Execution</strong>: DuckDB’s vectorized query execution model allows it to process data much faster than SQLite and more efficiently than PostgreSQL for certain types of analytical queries.</p></li>
-<li class="fragment"><p><strong>Ease of Setup and Use</strong>: Like SQLite, DuckDB does not require a separate server, making it easy to set up and use. However, it provides significantly higher performance for analytical queries compared to SQLite.</p></li>
-<li class="fragment"><p><strong>Integration with Data Science Tools</strong>: DuckDB offers seamless integration with data science tools and languages, particularly R and Python, which is more in-depth compared to what’s available with SQLite and even some aspects of PostgreSQL.</p></li>
+<li class="fragment"><strong>Adobe</strong>: Uses MongoDB for its Creative Cloud services.</li>
+<li class="fragment"><strong>SEGA</strong>: Enhances gaming experiences with MongoDB’s real-time analytics capabilities.</li>
 </ul>
 </section>
-<section id="advantages-of-duckdb-continued-1" class="slide level2">
-<h2>Advantages of DuckDB (continued)</h2>
-<h3 id="over-sqlite-and-postgresql-2">Over SQLite and PostgreSQL</h3>
-<ul>
-<li class="fragment"><strong>Resource Efficiency</strong>: DuckDB is designed to be efficient in its resource use, handling large datasets with lower memory and storage requirements compared to PostgreSQL, making it suitable for environments where resource utilization is a concern.</li>
-</ul>
-</section>
-<section id="future-directions-of-duckdb" class="slide level2">
-<h2>Future Directions of DuckDB</h2>
+<section id="future-direction" class="slide level2">
+<h2>Future Direction</h2>
 <h3 id="roadmap-and-innovations">Roadmap and Innovations</h3>
 <ul>
-<li class="fragment"><strong>Enhanced ML Integration</strong>: Plans to integrate more directly with machine learning libraries.</li>
-<li class="fragment"><strong>Scalability Improvements</strong>: Focus on scaling DuckDB to handle even larger datasets efficiently.</li>
-<li class="fragment"><strong>Cloud Optimizations</strong>: Enhancements for better performance in cloud environments.</li>
+<li class="fragment"><strong>Continued Emphasis on Performance</strong>: Enhancements in data processing speeds.</li>
+<li class="fragment"><strong>Expansion of MongoDB Atlas</strong>: Cloud services and more geographic regions.</li>
+<li class="fragment"><strong>Machine Learning Integration</strong>: Making MongoDB an all-in-one data platform.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+<h3 id="strategic-goals">Strategic Goals</h3>
+<ul>
+<li class="fragment"><strong>Enhanced Security Features</strong>: Strengthening data protection mechanisms.</li>
+<li class="fragment"><strong>Greater Integration with New Technologies</strong>: Focusing on seamless integration with AI and machine learning ecosystems.</li>
 </ul>
 </section>
 <section class="slide level2">
@@ -452,19 +443,19 @@
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="duckdb_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="mongodb_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="duckdb_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="duckdb_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="duckdb_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="duckdb_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="duckdb_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="mongodb_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="mongodb_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="mongodb_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="mongodb_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="mongodb_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="duckdb_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="duckdb_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="duckdb_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="duckdb_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="mongodb_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="mongodb_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="mongodb_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="mongodb_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

@@ -1,15 +1,41 @@
 ---
-title: "Introduction to DuckDB in R"
+title: "Introduction to DuckDB"
 format: 
   revealjs:
     transition: 'slide'
+    incremental: true
+editor: visual
+css: styles.css
 ---
 
-## Introduction to DuckDB
+## Introduction to [DuckDB](https://duckdb.org)
 
 ### What is DuckDB?
 
 DuckDB is an embeddable SQL OLAP database management system. It's designed primarily for analytical workloads and is aimed at simplifying data management within applications.
+
+```{=html}
+<link href="https://fonts.googleapis.com/css?family=Tinos:400,400i,700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Tinos', serif;
+  }
+  .fragment {
+    color: #3478f7; /* Blue color for the first fragment */
+  }
+  .fragment:nth-of-type(2n) {
+    color: #e34a33; /* Red color for alternating fragments */
+  }
+</style>
+```
+
+------------------------------------------------------------------------
+
+### What is OLAP?
+
+-   **Online Analytical Processing**
+-   **A category of software tools designed for data analysis**
+-   **Provides multidimensional analysis of data**
 
 ------------------------------------------------------------------------
 
@@ -17,7 +43,18 @@ DuckDB is an embeddable SQL OLAP database management system. It's designed prima
 
 ### Origin and Development
 
-DuckDB was created by Hannes Mühleisen, Mark Raasveldt, and a team of researchers at CWI Amsterdam. It began as a research project focused on improving data management and query execution within analytical applications.
+DuckDB was created by [Hannes Mühleisen](https://images.app.goo.gl/K62db7tvxyqnR66m8), [Mark Raasveldt](https://images.app.goo.gl/JnkxrFwRzXKqoC9x8), and a team of researchers at CWI Amsterdam. It began as a research project focused on improving data management and query execution within analytical applications.
+
+```{=html}
+<style>
+  .fragment[data-fragment-index="1"] {
+    color: #008000; /* Green color */
+  }
+  .fragment[data-fragment-index="2"] {
+    color: #ffa500; /* Orange color */
+  }
+</style>
+```
 
 ------------------------------------------------------------------------
 
@@ -57,6 +94,38 @@ DuckDB was created by Hannes Mühleisen, Mark Raasveldt, and a team of researche
 
 -   **Real-Time Analytics**: Integrated in web applications for on-the-fly data analysis.
 -   **Embedded Analytics**: Used within software products to provide embedded SQL capabilities.
+
+------------------------------------------------------------------------
+
+## Advantages of DuckDB
+
+### Over SQLite and PostgreSQL
+
+-   **Optimized for OLAP**: Unlike SQLite, which is optimized for lightweight transactions and local storage without the need for heavy concurrency, DuckDB is designed specifically for complex analytical queries, making it ideal for OLAP tasks.
+
+-   **In-Memory Processing**: DuckDB can operate both on-disk and entirely in-memory. This flexible operation model allows for high-performance scenarios that surpass the capabilities of SQLite when handling large datasets.
+
+-   **Columnar Storage**: DuckDB uses columnar storage which enhances query performance for analytics. This is a stark contrast to SQLite's row-based storage and even offers benefits over PostgreSQL when the primary requirement is analytical processing.
+
+------------------------------------------------------------------------
+
+## Advantages of DuckDB (continued)
+
+### Over SQLite and PostgreSQL
+
+-   **Vectorized Query Execution**: DuckDB's vectorized query execution model allows it to process data much faster than SQLite and more efficiently than PostgreSQL for certain types of analytical queries.
+
+-   **Ease of Setup and Use**: Like SQLite, DuckDB does not require a separate server, making it easy to set up and use. However, it provides significantly higher performance for analytical queries compared to SQLite.
+
+-   **Integration with Data Science Tools**: DuckDB offers seamless integration with data science tools and languages, particularly R and Python, which is more in-depth compared to what’s available with SQLite and even some aspects of PostgreSQL.
+
+------------------------------------------------------------------------
+
+## Advantages of DuckDB (continued)
+
+### Over SQLite and PostgreSQL
+
+-   **Resource Efficiency**: DuckDB is designed to be efficient in its resource use, handling large datasets with lower memory and storage requirements compared to PostgreSQL, making it suitable for environments where resource utilization is a concern.
 
 ------------------------------------------------------------------------
 

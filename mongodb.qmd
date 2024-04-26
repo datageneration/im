@@ -1,0 +1,115 @@
+---
+title: "Introduction to MongoDB"
+format: 
+  revealjs:
+    slide-level: 2
+    incremental: true
+    transition: slide
+editor: visual
+---
+
+## MongoDB: An Overview
+
+### History of MongoDB
+- **Origin**: Developed by Dwight Merriman, Eliot Horowitz, and Kevin Ryan.
+- **Initial Release**: 2009 by MongoDB Inc. (formerly 10gen).
+- **Purpose**: Designed to address limitations of traditional relational databases regarding scalability and flexibility.
+
+
+
+```{=html}
+<link href="https://fonts.googleapis.com/css?family=Tinos:400,400i,700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Tinos', serif;
+  }
+  .fragment {
+    color: #3478f7; /* Blue color for the first fragment */
+  }
+  .fragment:nth-of-type(2n) {
+    color: #e34a33; /* Red color for alternating fragments */
+  }
+</style>
+```
+
+
+------------------------------------------------------------------------
+
+
+### Inventors
+- **Dwight Merriman**: Former CTO of DoubleClick (now part of Google).
+- **Eliot Horowitz**: Background in building scalable websites, former CTO of MongoDB Inc.
+- **Kevin Ryan**: Entrepreneur involved in multiple startups including Business Insider and Gilt Groupe.
+
+------------------------------------------------------------------------
+
+
+## Functionalities and Advantages
+
+### Core Functionalities
+- **Document-Oriented Storage**: JSON-style documents with dynamic schemas.
+- **Full Index Support**: Index on any attribute, just like SQL databases.
+- **Replication & High Availability**: Automatic failovers with replica sets.
+
+------------------------------------------------------------------------
+
+
+### Advantages of Using MongoDB
+- **Scalability**: Horizontal scalability with sharding.
+- **Flexibility**: No schema migrations needed.
+- **Developer Friendly**: Rich queries and easy integration with multiple languages.
+
+------------------------------------------------------------------------
+
+
+## Comparison with Relational Databases
+
+### Traditional Databases (SQL)
+- **Examples**: PostgreSQL, MySQL.
+- **Schema**: Fixed and rigid, requiring migrations for modifications.
+- **Transactions**: Strong consistency and ACID compliance.
+
+------------------------------------------------------------------------
+
+
+### Comparing MongoDB
+- **Schema Flexibility**: Allows modifications without downtime.
+- **Scalability**: Designed for horizontal scaling.
+- **Use Case Fit**: Better suited for big data and real-time applications.
+
+------------------------------------------------------------------------
+
+
+## New Applications
+
+### Modern Online Apps
+- **Real-Time**: Real-time analytics and real-time personalization.
+- **Big Data**: Handling large volumes of unstructured data.
+- **IoT and Mobile Apps**: Storing data from millions of devices and mobile app backends.
+
+------------------------------------------------------------------------
+
+
+### Example Applications
+- **Adobe**: Uses MongoDB for its Creative Cloud services.
+- **SEGA**: Enhances gaming experiences with MongoDB's real-time analytics capabilities.
+
+------------------------------------------------------------------------
+
+
+## Future Direction
+
+### Roadmap and Innovations
+- **Continued Emphasis on Performance**: Enhancements in data processing speeds.
+- **Expansion of MongoDB Atlas**: Cloud services and more geographic regions.
+- **Machine Learning Integration**: Making MongoDB an all-in-one data platform.
+
+------------------------------------------------------------------------
+
+
+### Strategic Goals
+- **Enhanced Security Features**: Strengthening data protection mechanisms.
+- **Greater Integration with New Technologies**: Focusing on seamless integration with AI and machine learning ecosystems.
+
+---
+
